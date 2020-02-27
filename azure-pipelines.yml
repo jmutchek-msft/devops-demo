@@ -52,4 +52,5 @@ stages:
               azureSubscription: devops-demo-jmutchek-internal
               appType: webAppLinux
               appName: jm-devops-demo
-              package: $(System.ArtifactsDirectory)/**/*.zip
+              package: '$(Pipeline.Workspace)/devops-demo/**/*.zip'
+
