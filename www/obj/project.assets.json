@@ -8,23 +8,23 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\jmutchek\\.nuget\\packages\\": {},
+    "C:\\Users\\john5\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\users\\jmutchek\\Local\\70-code\\74-devops-microsoft\\devops-demo\\www\\www.csproj",
+      "projectUniqueName": "D:\\local\\70-code\\75-github-microsoft\\devops-demo\\www\\www.csproj",
       "projectName": "www",
-      "projectPath": "C:\\users\\jmutchek\\Local\\70-code\\74-devops-microsoft\\devops-demo\\www\\www.csproj",
-      "packagesPath": "C:\\Users\\jmutchek\\.nuget\\packages\\",
-      "outputPath": "C:\\users\\jmutchek\\Local\\70-code\\74-devops-microsoft\\devops-demo\\www\\obj\\",
+      "projectPath": "D:\\local\\70-code\\75-github-microsoft\\devops-demo\\www\\www.csproj",
+      "packagesPath": "C:\\Users\\john5\\.nuget\\packages\\",
+      "outputPath": "D:\\local\\70-code\\75-github-microsoft\\devops-demo\\www\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\jmutchek\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\john5\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

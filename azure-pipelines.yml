@@ -11,23 +11,26 @@ stages:
     steps:
     - script: echo "Build dotnet core"
     - task: DotNetCoreCLI@2
+      displayName: 'dotnet Restore'
       inputs:
         command: restore
         projects: '**/*.csproj'
     - task: DotNetCoreCLI@2
+      displayName: 'dotnet Build'
       inputs:
         command: 'build'
         projects: '**/*.csproj'
         workingDirectory: www
+        arguments: '--configuration Release' 
     - task: DotNetCoreCLI@2
+      displayName: 'dotnet Publish'
       inputs:
         command: publish
         publishWebProjects: True
         arguments: '--output $(Build.ArtifactStagingDirectory)'
         zipAfterPublish: True
-
-# this code takes all the files in $(Build.ArtifactStagingDirectory) and uploads them as an artifact of your build.
     - task: PublishBuildArtifacts@1
+      displayName: 'Publish artifact (zip file)'
       inputs:
         pathtoPublish: $(Build.ArtifactStagingDirectory)
         artifactName: devops-demo
