@@ -18,7 +18,7 @@ stages:
       inputs:
         command: 'build'
         projects: '**/*.csproj'
-        workingDirectory: 'www'
+        workingDirectory: www
     - task: DotNetCoreCLI@2
       inputs:
         command: publish
@@ -29,8 +29,8 @@ stages:
 # this code takes all the files in $(Build.ArtifactStagingDirectory) and uploads them as an artifact of your build.
     - task: PublishBuildArtifacts@1
       inputs:
-        pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
-        artifactName: 'devops-demo'
+        pathtoPublish: $(Build.ArtifactStagingDirectory)
+        artifactName: devops-demo
 
 - stage: Deploy
   jobs:
@@ -47,8 +47,9 @@ stages:
             inputs:
               artifact: devops-demo
           - task: AzureWebApp@1
+            displayName: 'Azure Web App Deploy'
             inputs:
-              azureSubscription: 'devops-demo-jmutchek-internal'
-              appType: 'webAppLinux'
-              appName: 'jm-devops-demo'
-              package: '$(Pipeline.Workspace)/devops-demo/**/*.zip'
+              azureSubscription: devops-demo-jmutchek-internal
+              appType: webAppLinux
+              appName: jm-devops-demo
+              package: $(System.ArtifactsDirectory)/**/*.zip

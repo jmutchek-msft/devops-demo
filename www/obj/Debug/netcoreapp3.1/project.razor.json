@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\users\\jmutchek\\Local\\70-code\\74-devops-microsoft\\devops-demo\\www\\www.csproj",
+  "FilePath": "d:\\local\\70-code\\75-github-microsoft\\devops-demo\\www\\www.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -20501,37 +20501,37 @@
   "RootNamespace": "www",
   "Documents": [
     {
-      "FilePath": "c:\\users\\jmutchek\\Local\\70-code\\74-devops-microsoft\\devops-demo\\www\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Pages\\Shared\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\users\\jmutchek\\Local\\70-code\\74-devops-microsoft\\devops-demo\\www\\Pages\\Error.cshtml",
+      "FilePath": "d:\\local\\70-code\\75-github-microsoft\\devops-demo\\www\\Pages\\Error.cshtml",
       "TargetPath": "Pages\\Error.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\users\\jmutchek\\Local\\70-code\\74-devops-microsoft\\devops-demo\\www\\Pages\\Shared\\_Layout.cshtml",
-      "TargetPath": "Pages\\Shared\\_Layout.cshtml",
+      "FilePath": "d:\\local\\70-code\\75-github-microsoft\\devops-demo\\www\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Pages\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\users\\jmutchek\\Local\\70-code\\74-devops-microsoft\\devops-demo\\www\\Pages\\Index.cshtml",
-      "TargetPath": "Pages\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\users\\jmutchek\\Local\\70-code\\74-devops-microsoft\\devops-demo\\www\\Pages\\Privacy.cshtml",
-      "TargetPath": "Pages\\Privacy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\users\\jmutchek\\Local\\70-code\\74-devops-microsoft\\devops-demo\\www\\Pages\\_ViewStart.cshtml",
+      "FilePath": "d:\\local\\70-code\\75-github-microsoft\\devops-demo\\www\\Pages\\_ViewStart.cshtml",
       "TargetPath": "Pages\\_ViewStart.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\users\\jmutchek\\Local\\70-code\\74-devops-microsoft\\devops-demo\\www\\Pages\\_ViewImports.cshtml",
+      "FilePath": "d:\\local\\70-code\\75-github-microsoft\\devops-demo\\www\\Pages\\Privacy.cshtml",
+      "TargetPath": "Pages\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\local\\70-code\\75-github-microsoft\\devops-demo\\www\\Pages\\Index.cshtml",
+      "TargetPath": "Pages\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\local\\70-code\\75-github-microsoft\\devops-demo\\www\\Pages\\Shared\\_Layout.cshtml",
+      "TargetPath": "Pages\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\local\\70-code\\75-github-microsoft\\devops-demo\\www\\Pages\\_ViewImports.cshtml",
       "TargetPath": "Pages\\_ViewImports.cshtml",
       "FileKind": "mvc"
     }
