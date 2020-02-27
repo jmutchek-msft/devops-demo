@@ -48,5 +48,5 @@ stages:
               azureSubscription: 'jm-devops-demo - 1 - Azure'
               appType: 'webApp'
               appName: 'jm-devops-demo'
-              package: '$(Build.ArtifactStagingDirectory)'
+              package: '$(Build.ArtifactStagingDirectory)/**/*.zip'
               deploymentMethod: 'auto'
