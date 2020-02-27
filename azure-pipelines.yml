@@ -9,7 +9,7 @@ stages:
       vmImage: 'Ubuntu-16.04'
     continueOnError: true
     steps:
-    - script: echo "hello to my first Build"
+    - script: echo "Build dotnet core"
     - task: DotNetCoreCLI@2
       inputs:
         command: restore
@@ -42,11 +42,10 @@ stages:
       runOnce:
         deploy:
           steps:
-          - script: echo "hello, Deploy!!!"
+          - script: echo "Deploy to Azure"
           - task: AzureWebApp@1
             inputs:
-              azureSubscription: 'jm-devops-demo - 1 - Azure'
-              appType: 'webApp'
+              azureSubscription: 'devops-demo-jmutchek-internal'
+              appType: 'webAppLinux'
               appName: 'jm-devops-demo'
-              package: '$(Build.ArtifactStagingDirectory)/**/*.zip'
-              deploymentMethod: 'auto'
+              package: '$(Build.ArtifactStagingDirectory)/*.zip'
