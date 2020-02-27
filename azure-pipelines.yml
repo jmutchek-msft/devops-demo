@@ -1,63 +1,28 @@
-trigger:
-- master
+trigger: master
 
-variables:
-  # Azure service connection established during pipeline creation
-  azureSubscription: jmutchek-internal
-  appName: jm-api-demo
-  # Agent VM image name
-  vmImageName: 'ubuntu-latest'
+stages:
+- stage: Build
+  jobs:
+  - job: Build
+    pool:
+      vmImage: 'Ubuntu-16.04'
+    continueOnError: true
+    steps:
+    - script: echo "hello to my first Build"
 
-pool:
-  name: Azure Pipelines
-
-steps:
-- bash: |
-   if [ -f extensions.csproj ]
-   then
-       dotnet build extensions.csproj --output ./bin
-   fi
-  displayName: 'Build extensions'
-
-- task: NodeTool@0
-  displayName: 'Use Node version 10.14.1'
-  inputs:
-    versionSpec: 10.14.1
-
-- task: Npm@1
-  displayName: 'Install Application Dependencies'
-  inputs:
-    workingDir: '$(System.DefaultWorkingDirectory)/api'
-    verbose: false
-
-- task: Npm@1
-  displayName: 'Run ''build'' script'
-  inputs:
-    command: custom
-    workingDir: '$(System.DefaultWorkingDirectory)/api'
-    verbose: false
-    customCommand: 'run build --if-present'
-
-- task: Npm@1
-  displayName: 'Remove extraneous packages'
-  inputs:
-    command: custom
-    workingDir: '$(System.DefaultWorkingDirectory)/api'
-    verbose: false
-    customCommand: 'prune --production'
-
-- task: ArchiveFiles@2
-  displayName: 'Archive files'
-  inputs:
-    rootFolderOrFile: '$(System.DefaultWorkingDirectory)/api'
-    includeRootFolder: false
-
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifact: drop'
-
-- task: AzureFunctionApp@1 # Add this at the end of your file
-  inputs:
-    azureSubscription: jm-devops-demo - 1 - Azure
-    appType: functionApp
-    appName: $(appName)
-    package: $(System.ArtifactsDirectory)/**/*.zip
+- stage: Deploy
+  jobs:
+  - deployment: Deploy
+    pool:
+      vmImage: 'Ubuntu-16.04'
+    environment: 'Prod'
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - script: echo "hello, Deploy!!!"
+          - task: DotNetCoreCLI@2
+            inputs:
+                command: 'build'
+                projects: '*.csproj'
+                workingDirectory: 'www'
