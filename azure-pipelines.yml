@@ -48,4 +48,4 @@ stages:
               azureSubscription: 'devops-demo-jmutchek-internal'
               appType: 'webAppLinux'
               appName: 'jm-devops-demo'
-              package: '$(Build.ArtifactStagingDirectory)/*.zip'
+              package: '$(Build.ArtifactsDirectory)/**/*.zip'
