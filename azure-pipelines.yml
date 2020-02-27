@@ -43,9 +43,12 @@ stages:
         deploy:
           steps:
           - script: echo "Deploy to Azure"
+          - task: DownloadPipelineArtifact@2
+            inputs:
+              artifact: devops-demo
           - task: AzureWebApp@1
             inputs:
               azureSubscription: 'devops-demo-jmutchek-internal'
               appType: 'webAppLinux'
               appName: 'jm-devops-demo'
-              package: '$(Build.ArtifactsDirectory)/**/*.zip'
+              package: '$(Pipeline.Workspace)/devops-demo/**/*.zip'
