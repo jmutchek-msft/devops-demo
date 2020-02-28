@@ -15,7 +15,7 @@ steps:
 - task: ArchiveFiles@2
   displayName: 'Archive files'
   inputs:
-    rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
+    rootFolderOrFile: '$(System.DefaultWorkingDirectory)/api'
     includeRootFolder: false
     archiveFile: '$(System.DefaultWorkingDirectory)/build$(Build.BuildId).zip'
 - task: PublishBuildArtifacts@1
@@ -27,4 +27,4 @@ steps:
     azureSubscription: devops-demo-jmutchek-internal
     appType: functionAppLinux
     appName: jm-demo-api
-    package: $(System.ArtifactsDirectory)/**/*.zip
+    package: '$(Pipeline.Workspace)/devops-demo/**/*.zip'
