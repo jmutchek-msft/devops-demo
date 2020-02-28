@@ -27,4 +27,4 @@ steps:
     azureSubscription: devops-demo-jmutchek-internal
     appType: functionAppLinux
     appName: jm-demo-api
-    package: $(System.ArtifactsDirectory)/drop/build$(Build.BuildId).zip
+    package: '$(System.DefaultWorkingDirectory)/build$(Build.BuildId).zip'
