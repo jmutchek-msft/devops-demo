@@ -4,7 +4,7 @@ module.exports = async function (context, req) {
     if (req.query.name || (req.body && req.body.name)) {
         context.res = {
             // status: 200, /* Defaults to 200 */
-            body: "Your devops name is " + (req.query.name || req.body.name)
+            body: "Your name is " + (req.query.name || req.body.name)
         };
     }
     else {
